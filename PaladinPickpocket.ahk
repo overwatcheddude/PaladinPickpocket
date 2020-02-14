@@ -1,5 +1,6 @@
 CoordMode, Mouse, Screen
 CoordMode, Pixel, Screen
+SetMouseDelay, -1
 
 pauseAnime()
 {
@@ -19,7 +20,7 @@ Loop
 	{
 		OutputDebug, "Found Paladin!"
 		OutputDebug, "Clicking on Paladin"
-		Click, -500, 485
+		Click, %outputX%, %outputY%
 		OutputDebug, "Check if coin pouch exists."
 		PixelGetColor, color, -192, 444
 		if (color = "0x2F434A")
@@ -28,7 +29,7 @@ Loop
 			Click, -192, 444
 		}
 		OutputDebug, "Check if hp is low."
-		PixelGetColor, color, -220, 275
+		PixelGetColor, color, -224, 261
 		if (color = "0x131313")
 		{
 			OutputDebug, "HP is low."
