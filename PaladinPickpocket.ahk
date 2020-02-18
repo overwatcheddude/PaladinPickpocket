@@ -22,11 +22,11 @@ Loop
 		OutputDebug, "Clicking on Paladin"
 		Click, %outputX%, %outputY%
 		OutputDebug, "Check if coin pouch exists."
-		PixelGetColor, color, -192, 444
-		if (color = "0x2F434A")
+		PixelSearch, pouchX, pouchY, -210, 420, -40, 670, 0x2F434A, 0, Fast
+		if (ErrorLevel = 0)
 		{
 			OutputDebug, "Coin pouch found. Clicking on it."
-			Click, -192, 444
+			Click, %pouchX%, %pouchY%
 		}
 		OutputDebug, "Check if hp is low."
 		PixelGetColor, color, -224, 261
